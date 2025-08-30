@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam Foxman</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header {
+            background: white;
+            color: #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0e0e0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #000;
+            line-height: 1.5;
+        }
+
+        .intro p {
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+        }
+
+        .publications {
+            list-style: none;
+        }
+
+        .publications li {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .publications li strong {
+            color: #2c3e50;
+        }
+
+        .publications li em {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .cv-section {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .cv-button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .cv-button:hover {
+            background: #2980b9;
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 868px) {
+            .container {
+                margin: 1rem;
+                border-radius: 0;
+            }
+            
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="pfp.jpg" alt="Sam Foxman" class="profile-img">
+            <h1>Sam Foxman</h1>
+        </header>
+        
+        <div class="content">
+            <div class="intro">
+                <p>Hi! My name is Sam, and I'm an undergrad at Caltech working in computer science. Right now, I'm working at NVIDIA and NASA in the Bay Area before I return to school in the fall.</p>
+                
+                <p>At Caltech, I work with the Gharib aerospace group on fluid mechanics, and I work at JPL on laser communications. I also work on computational chemistry with the Nelson group.</p>
+                
+                <p>For fun, I like listening to music, driving, and hiking to the top of mountains.</p>
+            </div>
+
+                         <div class="cv-section">
+                 <a href="Sam_Foxman_CV.pdf" class="cv-button">Download CV</a>
+             </div>
+
+            <h2>Project Highlights</h2>
+            <ul class="publications">
+                <li>
+                    <strong>NASA Laser Communication Software</strong>
+                    <br><br>
+                    I create software for NASA's space lasers. In 2023, my software decoded this transmission from deep space back to Earth which contained a cat video, demonstrating a novel method of high-bitrate deep space communication.
+                    I also invented GPU-based laser communications receivers, which outperform previous FPGA-based systems by 1.5x.<a href="#footnote1"><sup>1</sup></a>
+                    <br>
+                    <video controls poster="taters_preview.jpg" style="width: 100%; max-width: 600px; margin-top: 10px;">
+                        <source src="taters.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <br>
+                    <small><em>The Taters cat video sent by NASA which my software received. Source:
+                        <a href="https://www.cnn.com/2023/12/18/world/nasa-space-laser-cat-video-scn">CNN</a></em></small>
+                </li>
+
+                <li>
+                    <strong>GPU-accelerated image processing for aerospace</strong>
+                    <br><br>
+                    I created software that uses GPUs to analyze how air and water move by tracking particles in high-speed video.
+                    This technique helps engineers design airplanes, cars, and understand fluid mechanics phenomenon. My algorithms can
+                    process the data in real-time, while previous methods took days to analyze minutes of footage.
+                    <br>
+                    <img src="rapidpiv.png" alt="RapidPIV screenshot" style="width: 100%; max-width: 600px; margin-top: 10px;"/>
+                    <br>
+                    <small><em>Screenshot of the <a href="https://rapidpiv.caltech.edu">RapidPIV software</a>, available for free.</em></small>
+                </li>
+            </ul>
+
+            <h2>Selected Publications</h2>
+            <ul class="publications">
+                <li>
+                    <strong>S. Foxman, R. Rogalin.</strong> "GPU Receivers for Deep Space Optical Communications". <em>Presenting at SPIE Photonics West, Free-Space Laser Communications XXXVIII</em>, January 2026.
+                </li>
+
+                <li>
+                    <strong>S. Bollt, S. Foxman, M. Gharib.</strong> "RapidPIV: Full Flow-Field kHz PIV for Real-Time Display and Control". <em>Submitted to Measurement Science & Technology</em>, 2025. Preprint <a href="https://www.arxiv.org/abs/2504.17987">https://www.arxiv.org/abs/2504.17987</a>.
+                </li>
+                
+                <li>
+                    <strong>L. Coffin, A.J. Torres, S. Wallen, P. Calub, K. Gauld, I. Kwaterski, S. Foxman, H. Ramsperger, E. Xu, ..., K. Carpenter, S.J. Chung.</strong> "PILLARS: Plume-Deployed Inflatable for Launch and Landing Abrasive Regolith Shielding". <em>AIAA Aviation Forum and Ascend</em>, July 2025. <a href="https://doi.org/10.2514/6.2025-4126">https://doi.org/10.2514/6.2025-4126</a>
+                </li>
+                
+                <li>
+                    <strong>B. Ehlmann, ..., S. Foxman, ..., and the Lunar Trailblazer Team.</strong> "Lunar Trailblazer Spacecraft Tracking and Mission Recovery Attempt: Characterization of Status and Behavior of a Non-Cooperative Object in Cis-Lunar Space". <em>Manuscript submitted</em>, August 2025.
+                </li>
+                
+                <li>
+                    <strong>D. Eremin, K. Jha, D. Delgadillo, H. Zhang, S. Foxman, S. Johnson, N. Vlahakis, D. Cascio, V. Lavallo, J. Rodriguez, H. Nelson.</strong> "Spatially-Aware Diffraction Mapping Enables Fully Autonomous MicroED". <em>In review at Journal of the American Chemical Society (JACS)</em>, 2025.
+                </li>
+                
+                <li>
+                    <strong>B. Ehlmann, ..., S. Foxman, ..., and the Lunar Trailblazer Team.</strong> "The Lunar Trailblazer Mission: Science Motivation and Implementation of a Pioneering Small Satellite for Lunar Water and Lunar Geology in the NASA SIMPLEx program". <em>Submitted to Journal of Geophysical Research</em>, August 2025.
+                </li>
+            </ul>
+
+            <h2>Patents and Inventions</h2>
+            <ul class="publications">
+                <li>
+                    <strong>S. Bollt, S. Foxman, M. Gharib.</strong> "Portable Real-Time Optical Flow-Field Sensor". <em>U.S. Patent Application No. 63/715,303</em>, November 2024.
+                </li>
+                
+                <li>
+                    <strong>S. Foxman, R. Rogalin.</strong> "GPU-Based Optical Communications Modem". <em>Software available under license from Caltech/NASA Jet Propulsion Laboratory</em>, June 2025.
+                </li>
+                
+                <li>
+                    <strong>S. Foxman, S. Bollt, M. Gharib.</strong> "Systems and Methods for Optical Flow Using GPU Tensor Processing Cores". <em>U.S. Patent Application No. 63/823,578</em>, June 2025.
+                </li>
+            </ul>
+
+            <h2>Footnotes</h2>
+            <ol style="font-size: 0.9rem; color: #666; padding-left: 1.5rem;">
+                <li id="footnote1">GPU receiver achieved 75 Mbps from a 4 Watt transmitter at a distance of 2.25 * 10^8 km, versus 50 Mbps for FPGA system. See upcoming paper at SPIE Photonics West for details.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html> 
